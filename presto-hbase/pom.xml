@@ -22,7 +22,6 @@
             <groupId>org.apache.hbase</groupId>
             <artifactId>hbase-server</artifactId>
             <version>${dep.hbase.version}</version>
-            <scope>provided</scope>
             <exclusions>
                 <exclusion>
                     <artifactId>netty-all</artifactId>
@@ -43,7 +42,6 @@
             <groupId>org.apache.hbase</groupId>
             <artifactId>hbase-client</artifactId>
             <version>${dep.hbase.version}</version>
-            <scope>provided</scope>
             <exclusions>
                 <exclusion>
                     <artifactId>jdk.tools</artifactId>
