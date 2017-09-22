@@ -37,6 +37,7 @@ import org.apache.hadoop.hive.serde2.objectinspector.PrimitiveObjectInspector.Pr
 import org.apache.hadoop.hive.serde2.typeinfo.MapTypeInfo;
 import org.apache.hadoop.hive.serde2.typeinfo.PrimitiveTypeInfo;
 import org.apache.hadoop.hive.serde2.typeinfo.TypeInfo;
+import org.apache.hadoop.hive.serde2.OpenCSVSerde;
 import org.apache.hadoop.mapred.SequenceFileInputFormat;
 import org.apache.hadoop.mapred.TextInputFormat;
 import org.apache.hive.hcatalog.data.JsonSerDe;
@@ -91,6 +92,11 @@ public enum HiveStorageFormat
             new DataSize(8, Unit.MEGABYTE)),
     TEXTFILE(
             LazySimpleSerDe.class.getName(),
+            TextInputFormat.class.getName(),
+            HiveIgnoreKeyTextOutputFormat.class.getName(),
+            new DataSize(8, Unit.MEGABYTE)),
+    CSV(
+            OpenCSVSerde.class.getName(),
             TextInputFormat.class.getName(),
             HiveIgnoreKeyTextOutputFormat.class.getName(),
             new DataSize(8, Unit.MEGABYTE));
